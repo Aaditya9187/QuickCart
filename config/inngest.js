@@ -3,7 +3,11 @@ import connectDB from "@/lib/connectdb";
 import User from "@/models/User";
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "quickcart-next" });
+export const inngest = new Inngest({
+  id: "quickcart-next",
+  name: "QuickCart Events Handler",
+});
+
 
 // Inngest function to save user data to a database
 export const syncUserCreation = inngest.createFunction(
