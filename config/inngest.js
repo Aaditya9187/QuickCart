@@ -1,5 +1,5 @@
 import { Inngest } from "inngest";
-import connectDB from "./db";
+import connectDB from "@/lib/connectdb";
 import User from "@/modles/User";
 
 // Create a client to send and receive events
