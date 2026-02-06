@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import OurStory from "../assets/images/ourstory.jpg";
 
 export default function JourneySection() {
   return (
@@ -6,11 +8,13 @@ export default function JourneySection() {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
         {/* Left Image Block */}
-        <div className="relative">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAogtAvdsR51n5Cd0nc4aPF9xGgmMlGQKhB9rREXTsBJFJrrIpjFHulURlxxaheI3antXOBaz1nlN7j2-lqjwrbkbE2zlHrPE49qQK5ONGAQmRCTKn5ISvzXCoMPpLX9bCSlkjJNXvVcTSEDadhkRcHz3KxOBdlzdV5tLdRYbWnT1TnI7oV0tUb9qDWf-e5fV2R3-J4hhU7NpX6nhUHMNPJJy7odZWXuN9WSHeAlLwZ3xgkcSwU7HwxF4tudgn7Mg7-_tlsRvjX5w"
-            className="w-full rounded-2xl shadow-xl"
-            alt="QuickCart Team"
+        <div className="relative w-full h-96 md:h-[28rem]">
+          <Image
+            src={OurStory}
+            alt="E-commerce Shopping Illustration"
+            className="rounded-2xl shadow-2xl object-cover"
+            fill
+            style={{ objectFit: "cover", borderRadius: "1rem" }}
           />
 
           {/* Decorative Accent Box */}
@@ -42,14 +46,14 @@ export default function JourneySection() {
 
           {/* Feature Pills */}
           <div className="flex flex-wrap gap-4">
-            <div className="flex items-center gap-2 bg-indigo-50 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-indigo-50 px-4 py-2 rounded-full shadow-sm">
               <CheckCircle size={18} className="text-indigo-600" />
               <span className="text-sm font-semibold text-slate-900">
                 Authorized Retailer
               </span>
             </div>
 
-            <div className="flex items-center gap-2 bg-indigo-50 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-indigo-50 px-4 py-2 rounded-full shadow-sm">
               <CheckCircle size={18} className="text-indigo-600" />
               <span className="text-sm font-semibold text-slate-900">
                 Fast Global Delivery
