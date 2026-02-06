@@ -17,7 +17,6 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body suppressHydrationWarning={true} className={`${outfit.className} antialiased text-gray-700`}
 >
-
           <Toaster />
           <AppContextProvider>
             {children}
