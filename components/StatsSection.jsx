@@ -1,3 +1,5 @@
+"use client";
+
 import { Users, ShoppingBag, Globe, Clock } from "lucide-react";
 
 export default function StatsSection() {
@@ -32,19 +34,19 @@ export default function StatsSection() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((item) => (
             <div
               key={item.label}
               className="bg-white border border-slate-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               {/* Icon */}
-              <div className="mx-auto w-14 h-14 flex items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 mb-5">
+              <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 mb-5">
                 {item.icon}
               </div>
 
               {/* Number */}
-              <div className="text-4xl font-extrabold text-slate-900 mb-2">
+              <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-2">
                 {item.value}
               </div>
 
