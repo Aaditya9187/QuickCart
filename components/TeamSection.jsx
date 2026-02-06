@@ -1,3 +1,5 @@
+"use client";
+
 import { Linkedin, Twitter, Mail } from "lucide-react";
 
 export default function TeamSection() {
@@ -43,7 +45,7 @@ export default function TeamSection() {
 
   return (
     <section className="relative py-24 bg-gradient-to-b from-white to-indigo-50 overflow-hidden">
-      {/* Floating shapes */}
+      {/* Background floating shapes */}
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-indigo-100 rounded-full opacity-40 animate-pulse"></div>
       <div className="absolute -bottom-20 -right-16 w-72 h-72 bg-purple-100 rounded-full opacity-40 animate-pulse"></div>
 
@@ -52,27 +54,27 @@ export default function TeamSection() {
           Meet the Team
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {team.map((member) => (
             <div
               key={member.name}
               className="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
               {/* Image */}
-              <div className="relative overflow-hidden rounded-t-3xl">
+              <div className="relative overflow-hidden rounded-t-3xl h-80">
                 <img
                   src={member.img}
                   alt={member.name}
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
 
                 {/* Social Overlay */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-4 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-4 transition-opacity duration-300">
                   {member.socials.map((s, i) => (
                     <a
                       key={i}
                       href="#"
-                      className="text-white p-3 rounded-full bg-black/30 hover:bg-indigo-600 transition-colors"
+                      className="text-white p-3 rounded-full bg-black/20 hover:bg-primary transition-colors"
                     >
                       {getSocialIcon(s)}
                     </a>
@@ -82,9 +84,7 @@ export default function TeamSection() {
 
               {/* Info */}
               <div className="p-6 text-center">
-                <h4 className="font-bold text-lg mb-1 text-slate-900">
-                  {member.name}
-                </h4>
+                <h4 className="font-bold text-lg mb-1 text-slate-900">{member.name}</h4>
                 <p className="text-sm text-slate-600">{member.role}</p>
               </div>
             </div>
