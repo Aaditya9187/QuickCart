@@ -35,7 +35,7 @@ const Product = () => {
                 <div className="px-5 lg:px-16 xl:px-20">
                     <div className="rounded-lg overflow-hidden bg-gray-500/10 mb-4">
                         <Image
-                            src={mainImage || productData.image[0]}
+                            src={mainImage || productData?.imageUrl?.[0] || "/placeholder.png"}
                             alt="alt"
                             className="w-full h-auto object-cover mix-blend-multiply"
                             width={1280}
@@ -43,24 +43,26 @@ const Product = () => {
                         />
                     </div>
 
-                    <div className="grid grid-cols-4 gap-4">
-                        {productData.image.map((image, index) => (
-                            <div
-                                key={index}
-                                onClick={() => setMainImage(image)}
-                                className="cursor-pointer rounded-lg overflow-hidden bg-gray-500/10"
-                            >
-                                <Image
-                                    src={image}
-                                    alt="alt"
-                                    className="w-full h-auto object-cover mix-blend-multiply"
-                                    width={1280}
-                                    height={720}
-                                />
-                            </div>
+<div className="grid grid-cols-4 gap-4">
+  {productData?.imageUrl?.length > 0 ? (
+    productData.imageUrl.map((image, index) => (
+      <div
+        key={index}
+        onClick={() => setMainImage(image)}
+        className="cursor-pointer border p-1 rounded-md"
+      >
+        <img
+          src={image}
+          alt={`product thumbnail ${index}`}
+          className="w-full h-auto object-cover"
+        />
+      </div>
+    ))
+  ) : (
+    <p>No images available</p>
+  )}
+</div>
 
-                        ))}
-                    </div>
                 </div>
 
                 <div className="flex flex-col">
