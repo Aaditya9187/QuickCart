@@ -1,69 +1,54 @@
-# QuickCart - A simple eCommerce website
+# QuickCart Ecommerce
 
-QuickCart is an open-source **Next.js eCommerce frontend** project.  
-It provides a modern, fast and customizable shopping UI.  
-This repo is **frontend only** – contributors can improve the design, add new pages, animations and more.
+A **Full Stack E-Commerce Website** built using **Next.js**, **MongoDB**, **Tailwind CSS**, **Clerk**, and **Inngest**. This project demonstrates how to build a fully functional e-commerce website with authentication, cart functionality, admin panel, and deployment.  
 
 ---
 
 ## Features
 
--   Built with **Next.js + Tailwind CSS**
--   Responsive design
--   Reusable components
--   Customizable layouts and colors
--   Open for contributions (UI/UX, animations, themes, layouts etc.)
+- **User Authentication**: Secure and seamless login/signup using [Clerk](https://clerk.com/).  
+- **Background Tasks**: Manage background jobs and webhooks using [Inngest](https://inngest.com/).  
+- **Admin Panel**:  
+  - Upload and manage products  
+  - View orders placed by customers  
+- **Cart Functionality**: Users can add products to their cart and place orders.  
+- **Database**: Store products, orders, and user data in **MongoDB**.  
+- **Image Storage**: Product images are stored in **Cloudinary**.  
+- **Frontend Styling**: Responsive and modern UI using **Tailwind CSS**.  
+- **Deployment**: Hosted on **Vercel** for free and easy access online.  
+
+---
+
+## Tech Stack
+
+- **Frontend**: Next.js, Tailwind CSS  
+- **Backend**: Next.js API routes, Inngest functions  
+- **Authentication**: Clerk  
+- **Database**: MongoDB  
+- **Image Storage**: Cloudinary  
+- **Hosting/Deployment**: Vercel  
 
 ---
 
 ## Getting Started
 
-1. Clone the repo
+### 1. Clone the Repository
 
-    ```bash
-    git clone https://github.com/GreatStackDev/QuickCart.git
-    cd QuickCart
-    ```
+```bash
+git clone https://github.com/mdsojibmiah/QuickCart
+cd QuickCart
 
-2. Install dependencies
 
-    ```bash
-    npm install
-    ```
+npm install
 
-3. Run locally
+.env
+MONGO_URI=your_mongodb_connection_string
+CLERK_FRONTEND_API=your_clerk_frontend_api
+CLERK_API_KEY=your_clerk_api_key
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+INNGEST_API_KEY=your_inngest_api_key
 
-    ```bash
-    npm run dev
-    ```
 
----
-
-## Contributing
-
-We welcome all kinds of contributions! You can:
-
-- Create new pages
-- Improve layouts
-- Add animations and transitions
-- Enhance responsiveness
-- Refactor components
-- Suggest new UI/UX ideas
-- Add themes or color variations
-- Introduce accessibility improvements
-- Add filtering/search features
-- Improve documentation
-
-Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
-
----
-
-## License
-
-This project is licensed under the **MIT License**.
-
----
-
-## 🌟 Contributors
-
-Thanks to everyone who contributes to **QuickCart**!
+npm run dev
