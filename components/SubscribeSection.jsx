@@ -4,12 +4,12 @@ export default function SubscribeSection() {
       <div className="max-w-2xl mx-auto px-6 text-center relative bg-white rounded-3xl shadow-xl p-12">
         
         {/* Decorative Circle */}
-        <div className="absolute -top-10 -left-10 w-24 h-24 bg-indigo-100 rounded-full opacity-30 animate-pulse"></div>
-        <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-purple-100 rounded-full opacity-30 animate-pulse"></div>
+        {/* <div className="absolute -top-10 -left-10 w-24 h-24 bg-indigo-100 rounded-full opacity-30 animate-pulse"></div>
+        <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-purple-100 rounded-full opacity-30 animate-pulse"></div> */}
 
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-slate-900">
-          Subscribe now & get <span className="text-primary">20% off</span>
+          Subscribe now & get <span className="text-orange-600">20% off</span>
         </h2>
 
         {/* Subtitle */}
@@ -26,7 +26,7 @@ export default function SubscribeSection() {
           />
           <button
             type="submit"
-            className="bg-primary text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-orange-600 transition-all"
+            className="bg-primary text-white px-8 py-4 rounded-xl font-bold shadow-lg bg-orange-600 transition-all"
           >
             Subscribe
           </button>

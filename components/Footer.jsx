@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="py-4 text-center text-xs md:text-sm">
+      <p className="py-4 text-center text-black text-xs md:text-sm">
         Copyright 2025 © QuickCarts All Right Reserved.
       </p>
     </footer>
