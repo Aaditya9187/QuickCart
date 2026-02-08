@@ -43,25 +43,25 @@ const Product = () => {
                         />
                     </div>
 
-<div className="grid grid-cols-4 gap-4">
-  {productData?.imageUrl?.length > 0 ? (
-    productData.imageUrl.map((image, index) => (
-      <div
-        key={index}
-        onClick={() => setMainImage(image)}
-        className="cursor-pointer border p-1 rounded-md"
-      >
-        <img
-          src={image}
-          alt={`product thumbnail ${index}`}
-          className="w-full h-auto object-cover"
-        />
-      </div>
-    ))
-  ) : (
-    <p>No images available</p>
-  )}
-</div>
+                    <div className="grid grid-cols-4 gap-4">
+                    {productData?.imageUrl?.length > 0 ? (
+                        productData.imageUrl.map((image, index) => (
+                        <div
+                            key={index}
+                            onClick={() => setMainImage(image)}
+                            className="cursor-pointer border p-1 rounded-md"
+                        >
+                            <img
+                            src={image}
+                            alt={`product thumbnail ${index}`}
+                            className="w-full h-auto object-cover"
+                            />
+                        </div>
+                        ))
+                    ) : (
+                        <p>No images available</p>
+                    )}
+                    </div>
 
                 </div>
 
