@@ -127,18 +127,23 @@ export const AppContextProvider = (props) => {
         }
         return totalCount;
     }
+const getCartAmount = () => {
+    if (!products || products.length === 0) return 0;
 
-    const getCartAmount = () => {
-        let totalAmount = 0;
-        for (const items in cartItems) {
-            let itemInfo = products.find((product) => product._id === items);
-            if (itemInfo && cartItems[items] > 0) {
-                totalAmount += (itemInfo.offerPrice || 0) * cartItems[items];
-            }
+    let totalAmount = 0;
 
+    for (const itemId in cartItems) {
+        const product = products.find(p => p._id.toString() === itemId); // ObjectId to string
+        if (!product) {
+            console.warn("Product not found for cart item:", itemId);
+            continue; // skip if product not found
         }
-        return Math.floor(totalAmount * 100) / 100;
+        totalAmount += product.offerPrice * cartItems[itemId];
     }
+
+    return Math.floor(totalAmount * 100) / 100;
+};
+
 
     useEffect(() => {
         fetchProductData()

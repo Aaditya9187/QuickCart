@@ -45,6 +45,7 @@ const OrderSummary = () => {
         product:key,
         quantity: cartItems[key]
       }))
+      
 
       cartItemsArray = cartItemsArray.filter(item => item.quantity > 0);
 
