@@ -1,6 +1,6 @@
 # QuickCart Ecommerce
 
-A **Full Stack E-Commerce Website** built using **Next.js**, **MongoDB**, **Tailwind CSS**, **Clerk**, and **Inngest**. This project demonstrates how to build a fully functional e-commerce website with authentication, cart functionality, admin panel, and deployment.  
+A **Full Stack E-Commerce Website** built using **Next.js**, **MongoDB**, **Tailwind CSS**, **Clerk**, and **Inngest**. This project demonstrates how to build a fully functional e-commerce website with authentication, cart functionality, admin panel, and deployment.!!!
 
 ---
 
