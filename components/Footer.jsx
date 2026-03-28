@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="py-4 text-center text-black text-xs md:text-sm">
-        Copyright 2025 © QuickCarts All Right Reserved.
+        Copyright 2026 © QuickCarts All Right Reserved. - Designed and Developed by <a href="https://aaditya-dev.vercel.app">Aaditya Chhatraliya</a>.
       </p>
     </footer>
   );
