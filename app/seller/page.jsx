@@ -1,12 +1,29 @@
 'use client'
-import React, { useState } from "react";
-import { assets } from "@/assets/assets";
+import React, { useState, useEffect } from "react";
+import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import { assets } from "../../assets/assets";
 import Image from "next/image";
-import { useAppContext } from "@/context/AppContext";
+import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
 import axios from "axios";
 
 const AddProduct = () => {
+
+  const { user, isLoaded } = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isLoaded) {
+      if (user?.publicMetadata?.role !== "seller") {
+        router.push("/unauthorized");
+      }
+    }
+  }, [isLoaded, user, router]);
+
+  if (!isLoaded || user?.publicMetadata?.role !== "seller") {
+    return null;
+  }
 
   const {getToken} = useAppContext();
 
