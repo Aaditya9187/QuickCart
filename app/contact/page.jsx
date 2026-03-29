@@ -4,7 +4,7 @@ import ContactInfoSection from "@/components/contact/ContactInfoSection";
 import FAQSection from "@/components/contact/FAQSection";
 import HeroSection from "@/components/contact/HeroSection";
 import MapSection from "@/components/contact/MapSection";
-import Footer from "@/components/Footer";
+import Footer from "../../components/Footer";
 import Navbar from "@/components/Navbar";
 
 export default function ContactPage() {

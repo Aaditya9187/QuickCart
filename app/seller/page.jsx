@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import { assets } from "@/assets/assets";
+import { assets } from "../../assets/assets";
 import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
 import toast from "react-hot-toast";
