@@ -8,14 +8,16 @@ import { useClerk } from '@clerk/nextjs'
 
 const Navbar = () => {
   const router = useRouter()
-  const { signOut } = useClerk()
+  const clerk = useClerk() // don’t destructure here
+  if (!clerk) return null // avoids hook errors if Clerk isn’t ready
+  const { signOut } = clerk
 
   const handleLogout = async () => {
     try {
       await signOut()
       router.push('/')
     } catch (err) {
-      console.error('Error during logout:', err)
+      console.error('Logout failed:', err)
       alert('Logout failed. Check console.')
     }
   }
@@ -23,10 +25,10 @@ const Navbar = () => {
   return (
     <div className='flex items-center px-4 md:px-8 py-3 justify-between border-b'>
       <Image
-        onClick={()=>router.push('/')}
+        onClick={() => router.push('/')}
         className='w-28 lg:w-32 cursor-pointer'
         src={assets.logo}
-        alt=""
+        alt="logo"
       />
       <button
         onClick={handleLogout}
