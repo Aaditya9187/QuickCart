@@ -5,11 +5,16 @@ import Link from "next/link"
 import { useAppContext } from "../context/AppContext";
 import Image from "next/image";
 import { useClerk, UserButton } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
 
   const { isSeller, router, user } = useAppContext();
   const { openSignIn } = useClerk();
+  const pathname = usePathname();
+
+  // Helper to highlight active links
+  const isActive = (path) => pathname === path;
 
   return (
     <nav className="flex items-center justify-between px-6 md:px-16 lg:px-32 py-3 border-b border-gray-300 text-gray-700">
@@ -20,20 +25,20 @@ const Navbar = () => {
         alt="logo"
       />
       <div className="flex items-center gap-4 lg:gap-8 max-md:hidden">
-        <Link href="/" className="hover:text-gray-900 transition">
+        <Link href="/" className={`hover:text-gray-900 transition duration-200 ${isActive("/") ? "font-bold" : ""}`}>
           Home
         </Link>
-        <Link href="/all-products" className="hover:text-gray-900 transition">
+        <Link href="/all-products" className={`hover:text-gray-900 transition duration-200 ${isActive("/all-products") ? "font-bold" : ""}`}>
           Shop
         </Link>
-        <Link href="/aboutUs" className="hover:text-gray-900 transition">
+        <Link href="/aboutUs" className={`hover:text-gray-900 transition duration-200 ${isActive("/aboutUs") ? "font-bold" : ""}`}>
           About Us
         </Link>
-        <Link href="/contact" className="hover:text-gray-900 transition">
+        <Link href="/contact" className={`hover:text-gray-900 transition duration-200 ${isActive("/contact") ? "font-bold" : ""}`}>
           Contact
         </Link>
 
-        {isSeller && <button onClick={() => router.push('/seller')} className="text-xs border px-4 py-1.5 rounded-full">Seller Dashboard</button>}
+        {isSeller && <button onClick={() => router.push('/seller')} className="text-xs border px-4 py-1.5 rounded-full hover:scale-105 hover:bg-gray-100 transition-all duration-200">Seller Dashboard</button>}
 
       </div>
 
@@ -52,7 +57,7 @@ const Navbar = () => {
          </> 
         : <button onClick={openSignIn} className="flex items-center gap-2 hover:text-gray-900 transition">
           <Image src={assets.user_icon} alt="user icon" />
-          Account
+          Sign In / Join
         </button>}
       </ul>
 
@@ -77,7 +82,7 @@ const Navbar = () => {
          </> 
         : <button onClick={openSignIn} className="flex items-center gap-2 hover:text-gray-900 transition">
           <Image src={assets.user_icon} alt="user icon" />
-          Account
+          Sign In / Join
         </button>}
       </div>
     </nav>
