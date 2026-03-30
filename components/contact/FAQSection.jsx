@@ -6,20 +6,20 @@ import { Plus, Minus } from "lucide-react";
 export default function FAQSection() {
   const faqs = [
     {
-      question: "How can I track my order?",
-      answer: "Track your order via the 'Track Order' link in your confirmation email or QuickCart dashboard.",
+      question: "lorem ipsum dolor sit amet?",
+      answer: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      question: "What is your return policy?",
-      answer: "We offer a 30-day return policy for most items in their original condition and packaging.",
+      question: "lorem ipsum dolor sit amet?",
+      answer: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      question: "Do you ship internationally?",
-      answer: "Yes, QuickCart ships to over 50 countries worldwide. Shipping cost varies by location.",
+      question: "lorem ipsum dolor sit amet?",
+      answer: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      question: "How do I become a seller?",
-      answer: "Go to 'Seller Dashboard' in the header → 'Register as Seller' → follow instructions to set up your store.",
+      question: "lorem ipsum dolor sit amet?",
+      answer: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
   ];
 
@@ -30,7 +30,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 bg-indigo-50">
+    <section className="py-20 bg-orange-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-12">

@@ -17,7 +17,7 @@ const contactInfo = [
   {
     icon: <Mail size={24} />,
     title: "Email",
-    details: "support@quickcart.com\nsales@quickcart.com",
+    details: "contact@quickcart.com\nsales@quickcart.com",
   },
 ];
 
@@ -121,7 +121,7 @@ export default function ContactSection() {
 
     <button
       type="submit"
-      className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-3xl bg-indigo-500 text-white font-bold hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-lg"
+      className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-3xl bg-orange-500 text-white font-bold hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-lg"
     >
       Send Message <Send size={20} />
     </button>
