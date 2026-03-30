@@ -3,17 +3,21 @@
 import React from 'react'
 import { assets } from '../../assets/assets'
 import Image from 'next/image'
-import { useAppContext } from '../../context/AppContext'
+import { useRouter } from 'next/navigation'
 import { useClerk } from '@clerk/nextjs'
 
 const Navbar = () => {
-
-  const { router } = useAppContext()
+  const router = useRouter()
   const { signOut } = useClerk()
 
   const handleLogout = async () => {
-    await signOut()
-    router.push('/')
+    try {
+      await signOut()
+      router.push('/')
+    } catch (err) {
+      console.error('Error during logout:', err)
+      alert('Logout failed. Check console.')
+    }
   }
 
   return (
@@ -24,7 +28,6 @@ const Navbar = () => {
         src={assets.logo}
         alt=""
       />
-
       <button
         onClick={handleLogout}
         className='bg-gray-600 text-white px-5 py-2 sm:px-7 sm:py-2 rounded-full text-xs sm:text-sm'
