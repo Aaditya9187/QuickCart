@@ -41,7 +41,7 @@ export default function StatsSection() {
               className="bg-white border border-slate-100 rounded-2xl p-8 text-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               {/* Icon */}
-              <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 mb-5">
+              <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-xl bg-orange-50 text-orange-600 mb-5">
                 {item.icon}
               </div>
 

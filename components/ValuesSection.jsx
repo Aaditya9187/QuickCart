@@ -24,7 +24,7 @@ export default function ValuesSection() {
       <div className="max-w-7xl mx-auto px-6 text-center">
 
         {/* Section Label */}
-        <span className="inline-block text-indigo-600 font-semibold uppercase text-sm tracking-widest mb-4">
+        <span className="inline-block text-orange-600 font-semibold uppercase text-sm tracking-widest mb-4">
           What We Stand For
         </span>
 
@@ -45,7 +45,7 @@ export default function ValuesSection() {
               className="bg-white border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               {/* Icon Badge */}
-              <div className="mx-auto w-14 h-14 flex items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 mb-6">
+              <div className="mx-auto w-14 h-14 flex items-center justify-center rounded-xl bg-orange-50 text-orange-600 mb-6">
                 {item.icon}
               </div>
 

@@ -18,12 +18,12 @@ export default function JourneySection() {
           />
 
           {/* Decorative Accent Box */}
-          <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-indigo-50 rounded-2xl -z-10"></div>
+          <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-orange-50 rounded-2xl -z-10"></div>
         </div>
 
         {/* Right Content Block */}
         <div>
-          <span className="inline-block text-indigo-600 font-semibold uppercase text-sm tracking-widest mb-4">
+          <span className="inline-block text-orange-600 font-semibold uppercase text-sm tracking-widest mb-4">
             Our Story
           </span>
 
@@ -46,15 +46,15 @@ export default function JourneySection() {
 
           {/* Feature Pills */}
           <div className="flex flex-wrap gap-4">
-            <div className="flex items-center gap-2 bg-indigo-50 px-4 py-2 rounded-full shadow-sm">
-              <CheckCircle size={18} className="text-indigo-600" />
+            <div className="flex items-center gap-2 bg-orange-50 px-4 py-2 rounded-full shadow-sm">
+              <CheckCircle size={18} className="text-orange-600" />
               <span className="text-sm font-semibold text-slate-900">
                 Authorized Retailer
               </span>
             </div>
 
-            <div className="flex items-center gap-2 bg-indigo-50 px-4 py-2 rounded-full shadow-sm">
-              <CheckCircle size={18} className="text-indigo-600" />
+            <div className="flex items-center gap-2 bg-orange-50 px-4 py-2 rounded-full shadow-sm">
+              <CheckCircle size={18} className="text-orange-600" />
               <span className="text-sm font-semibold text-slate-900">
                 Fast Global Delivery
               </span>
@@ -62,7 +62,7 @@ export default function JourneySection() {
           </div>
 
           {/* CTA Link */}
-          <div className="mt-8 flex items-center gap-2 text-indigo-600 font-semibold cursor-pointer hover:gap-3 transition-all">
+          <div className="mt-8 flex items-center gap-2 text-orange-600 font-semibold cursor-pointer hover:gap-3 transition-all">
             <span>Learn more about us</span>
             <ArrowRight size={18} />
           </div>
