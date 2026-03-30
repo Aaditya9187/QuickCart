@@ -8,13 +8,12 @@ import { useClerk } from '@clerk/nextjs'
 
 const Navbar = () => {
   const router = useRouter()
-  const clerk = useClerk() // don’t destructure here
-  if (!clerk) return null // avoids hook errors if Clerk isn’t ready
-  const { signOut } = clerk
+  const clerk = useClerk() // always call the hook at top
+  const signOut = clerk?.signOut // optional chaining, safe even if clerk is undefined
 
   const handleLogout = async () => {
     try {
-      await signOut()
+      if (signOut) await signOut()
       router.push('/')
     } catch (err) {
       console.error('Logout failed:', err)
