@@ -121,11 +121,11 @@ QuickCart
 
 # 🎯 Future Improvements
 
-Payment gateway integration (Stripe / Razorpay)
-Product reviews and ratings
-Wishlist functionality
-Advanced search and filters
-Email notifications
+- Payment gateway integration (Stripe / Razorpay)
+- Product reviews and ratings
+- Wishlist functionality
+- Advanced search and filters
+- Email notifications
 
 ---
 
