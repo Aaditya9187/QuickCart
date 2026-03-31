@@ -6,6 +6,7 @@ import { useAppContext } from "../context/AppContext";
 import Image from "next/image";
 import { useClerk, UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
+import { InfoIcon, MailIcon } from "lucide-react";
 
 const Navbar = () => {
 
@@ -77,6 +78,12 @@ const Navbar = () => {
             </UserButton.MenuItems>
             <UserButton.MenuItems>
               <UserButton.Action label = "My Orders" labelIcon={<BagIcon/>} onClick={()=>router.push('/my-orders')} />
+            </UserButton.MenuItems>            
+            <UserButton.MenuItems>
+              <UserButton.Action label="About Us" labelIcon={<InfoIcon size={18} />} onClick={()=>router.push('/aboutUs')} />
+            </UserButton.MenuItems>            
+            <UserButton.MenuItems>
+              <UserButton.Action label="Contact" labelIcon={<MailIcon size={18} />} onClick={()=>router.push('/contact')} />
             </UserButton.MenuItems>            
           </UserButton>
          </> 
