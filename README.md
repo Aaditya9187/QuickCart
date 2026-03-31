@@ -37,7 +37,7 @@ The project focuses on **clean architecture, modern UI design, and real-world pr
 - Fully responsive interface built with Tailwind CSS
 
 ### 🚀 Deployment
-- Easily deployed using Vercel
+- Easily deployed using Vercel "https://quick-cart-gray-xi.vercel.app"
 
 ---
 
@@ -101,6 +101,8 @@ Your application will start at:
 http://localhost:3000
 ```
 
+---
+
 # 📦 Project Structure
 
 QuickCart
@@ -114,6 +116,8 @@ QuickCart
 ├── models
 ├── public
 └── .env
+
+---
 
 # 🎯 Future Improvements
 
