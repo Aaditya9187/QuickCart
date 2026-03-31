@@ -44,7 +44,7 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex items-center gap-4 ">
-        <Image className="w-4 h-4" src={assets.search_icon} alt="search icon" />
+        <Image className="w-4 h-4 mr-1" src={assets.search_icon} alt="search icon" />
         { user 
         ? <> 
           <UserButton>
@@ -64,6 +64,7 @@ const Navbar = () => {
 
       <div className="flex items-center md:hidden gap-3">
         {isSeller && <button onClick={() => router.push('/seller')} className="text-xs border px-4 py-1.5 rounded-full">Seller Dashboard</button>}
+        <Image className="w-4 h-4 mr-1" src={assets.search_icon} alt="search icon" />
         { user 
         ? <> 
           <UserButton>
