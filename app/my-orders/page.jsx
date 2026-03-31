@@ -8,33 +8,34 @@ import Navbar from "../../components/Navbar";
 import Loading from "../../components/Loading";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Link from "next/link";
+import { ShoppingBag } from "lucide-react";
 
 const MyOrders = () => {
 
     const { currency, getToken, user } = useAppContext();
 
-
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const fetchOrders = async () => {
-        try{
+        try {
             const token = await getToken();
-            const {data} = await axios.get('/api/order/list', {headers: {'Authorization': `Bearer ${token}`}})
-            if(data.success){
+            const { data } = await axios.get('/api/order/list', { headers: { 'Authorization': `Bearer ${token}` } })
+            if (data.success) {
                 setOrders(data.orders.reverse());
                 setLoading(false);
-            }else{
+            } else {
                 toast.error(data.message);
             }
 
-        }catch(err){
+        } catch (err) {
             toast.error(err.message);
-        }   
+        }
     }
 
     useEffect(() => {
-        if(user){
+        if (user) {
             fetchOrders();
         }
     }, [user]);
@@ -44,53 +45,89 @@ const MyOrders = () => {
             <Navbar />
             <div className="flex flex-col justify-between px-6 md:px-16 lg:px-32 py-6 min-h-screen">
                 <div className="space-y-5">
-                    <h2 className="text-lg font-medium mt-6">My Orders</h2>
-                    {loading ? <Loading /> : (<div className="max-w-5xl border-t border-gray-300 text-sm">
-                        {orders.map((order, index) => (
-                            <div key={index} className="flex flex-col md:flex-row gap-5 justify-between p-5 border-b border-gray-300">
-                                <div className="flex-1 flex gap-5 max-w-80">
-                                    <Image
-                                        className="max-w-16 max-h-16 object-cover"
-                                        src={assets.box_icon}
-                                        alt="box_icon"
-                                    />
-                                    <p className="flex flex-col gap-3">
-                                        <span className="font-medium text-base">
-                                        {order.items
-                                            .map((item) => {
-                                                if (!item.product) return `${item.quantity}`; // fixed
-                                                return `${item.product.name} x ${item.quantity}`;
-                                            })
-                                            .join(", ")
-                                        }
+                    <h2 className="text-lg font-medium mt-6 max-w-5xl mx-auto">
+                        My Orders
+                    </h2>
 
+                    {loading ? (
+                        <Loading />
+                    ) : (
+                        <div className="max-w-5xl mx-auto border-t border-gray-300 text-sm mt-4">
 
-                                        </span>
-                                        {/* <span>Items : {order.items.length}</span> */}
-                                    </p>
+                            {orders.length === 0 ? (
+                                <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-6">
+
+                                    <div className="bg-white shadow-lg rounded-2xl p-10 max-w-lg w-full">
+
+                                        <div className="flex justify-center mb-4">
+                                            <ShoppingBag size={60} className="text-gray-400" />
+                                        </div>
+
+                                        <h2 className="text-2xl font-semibold text-gray-700 mb-2">
+                                            No Orders Yet
+                                        </h2>
+
+                                        <p className="text-gray-500 mb-6">
+                                            Looks like you haven't placed any orders. Start exploring products and place your first order today.
+                                        </p>
+
+                                        <Link href="/all-products">
+                                            <button className="bg-black text-white px-6 py-3 rounded-full hover:scale-105 hover:bg-gray-800 transition-all duration-300">
+                                                Start Shopping →
+                                            </button>
+                                        </Link>
+
+                                    </div>
                                 </div>
-                                <div>
-                                    <p>
-                                        <span className="font-medium">{order.address.fullName}</span>
-                                        <br />
-                                        <span >{order.address.area}</span>
-                                        <br />
-                                        <span>{`${order.address.city}, ${order.address.state}`}</span>
-                                        <br />
-                                        <span>{order.address.phoneNumber}</span>
-                                    </p>
-                                </div>
-                                <p className="font-medium my-auto">{currency}{order.amount}</p>
-                                <div>
-                                    <p className="flex flex-col">
-                                        <span>Method : COD</span>
-                                        <span>Date : {new Date(order.date).toLocaleDateString()}</span>
-                                        <span>Payment : Pending</span>
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>)}
+                            ) : (
+                                orders.map((order, index) => (
+                                    <div key={index} className="flex flex-col md:flex-row gap-5 justify-between p-5 border-b border-gray-300">
+                                        <div className="flex-1 flex gap-5 max-w-80">
+                                            <Image
+                                                className="max-w-16 max-h-16 object-cover"
+                                                src={assets.box_icon}
+                                                alt="box_icon"
+                                            />
+                                            <p className="flex flex-col gap-3">
+                                                <span className="font-medium text-base">
+                                                    {order.items
+                                                        .map((item) => {
+                                                            if (!item.product) return `${item.quantity}`;
+                                                            return `${item.product.name} x ${item.quantity}`;
+                                                        })
+                                                        .join(", ")
+                                                    }
+                                                </span>
+                                            </p>
+                                        </div>
+
+                                        <div>
+                                            <p>
+                                                <span className="font-medium">{order.address.fullName}</span>
+                                                <br />
+                                                <span>{order.address.area}</span>
+                                                <br />
+                                                <span>{`${order.address.city}, ${order.address.state}`}</span>
+                                                <br />
+                                                <span>{order.address.phoneNumber}</span>
+                                            </p>
+                                        </div>
+
+                                        <p className="font-medium my-auto">{currency}{order.amount}</p>
+
+                                        <div>
+                                            <p className="flex flex-col">
+                                                <span>Method : COD</span>
+                                                <span>Date : {new Date(order.date).toLocaleDateString()}</span>
+                                                <span>Payment : Pending</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
+
+                        </div>
+                    )}
                 </div>
             </div>
             <Footer />
