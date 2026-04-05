@@ -2,6 +2,7 @@ import Order from '../../../models/Order'
 import connectDB from '../../../config/db'
 import Stripe from 'stripe'
 import User from '../../../models/User'
+import { NextResponse } from 'next/server'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
@@ -53,8 +54,4 @@ export async function POST(request) {
         console.error(error)
         return NextResponse.json({message:error.message})
     }
-}
-
-export const config = {
-    api: { bodyparser: false }
 }
