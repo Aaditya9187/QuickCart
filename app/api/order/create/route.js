@@ -34,7 +34,8 @@ export async function POST(request) {
                 address,
                 items,
                 amount: totalAmount,
-                date: Date.now()
+                date: Date.now(),
+                paymentType: 'COD'
             }
         });
 
